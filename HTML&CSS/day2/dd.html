@@ -1,0 +1,79 @@
+<head>
+<link rel="stylesheet" href="c.css"/>
+</head>
+<body>
+    <form>
+        <table border="1" width="20%">
+          <thead>
+            <tr>
+              <th align="center" colspan="2">Registration Form</th>
+            </tr>
+          </thead>
+          <tr>
+            <td>First Name:</td>
+            <td><input type="text" name="firstname"></td>
+          </tr>
+          <tr>
+            <td>Last Name:</td>
+            <td><input type="text" name="lastname"></td>
+          </tr>
+          <tr>
+            <td>Username:</td>
+            <td><input type="text" name="username"></td>
+          </tr>
+          <tr>
+            <td>Password:</td>
+            <td><input type="password" name="password"></td>
+          </tr>
+          <tr>
+            <td>Track:</td>
+            <td>
+              <select name="track">
+                <option value="py">Python</option>
+                <option value="bi">Business Intelligence</option>
+                <option value="js">JavaScript</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td rowspan="2">Gender:</td>
+            <td>
+              <label for="male-radio"><input type="radio" id="male-radio" name="gender" value="male"> Male</label>
+              
+            </td>
+          </tr>
+          <tr>
+            
+             <td> <label for="female-radio"><input type="radio" id="female-radio" name="gender" value="female"> Female</label>
+            </td>
+          </tr>
+          <tr>
+            <td>Favorites:</td>
+            <td>
+              <label><input type="checkbox" name="favorites[]" value="football"> Football</label>
+              <label><input type="checkbox" name="favorites[]" value="basketball"> Basketball</label>
+              <label><input type="checkbox" name="favorites[]" value="games"> Games</label>
+              <br>
+              <label><input type="checkbox" name="favorites[]" value="reading"> Reading</label>
+              <label><input type="checkbox" name="favorites[]" value="swimming"> Swimming</label>
+              <label><input type="checkbox" name="favorites[]" value="travel"> Travel</label>
+            </td>
+          </tr>
+          <tr>
+            <td>Description:</td>
+            <td><textarea name="description"></textarea></td>
+          </tr>
+          <tr>
+            
+            <td colspan="2"><input type="file" name="file"></td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <input type="submit" value="Submit">
+              <input type="reset" value="Reset">
+            </td>
+          </tr>
+        </table>
+      </form>
+
+</body>

@@ -1,0 +1,8 @@
+1.	Musician Table(#id,name,city,street,phonenumber,* album indefifer)
+2.	Instrument Table(musicalkey,#name)
+3.	Album Table(#album indefifer,title,copyrightdate)
+4.	Song Table(#title,author,* album indefifer)
+5.	Musician_Instrument Table (Many-to-Many Relationship):
+(*#musicainid,*#insturmentid)
+6.	Song_Musician Table (Many-to-Many Relationship):
+(#*songtitle,*#muiscain id)

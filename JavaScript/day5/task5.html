@@ -1,0 +1,41 @@
+<script>
+    //1 swap using dist
+    let a = 5;
+    let b = 10;
+    [a, b] = [b, a];
+    console.log(a); 
+    console.log(b);
+    //2 min max using spread
+    function getMinMax(...arr) {
+        const min = Math.min(...arr);
+        const max = Math.max(...arr);
+        return [min, max];
+      }
+      
+      const arr = [1, 5, 2, 8, 3];
+      
+      const [min, max] = getMinMax(...arr);
+      
+      console.log(`The minimum value of the array is ${min}`);
+      console.log(`The maximum value of the array is ${max}`);
+    //3 given this array
+    const fruits = ["apple", "strawberry", "banana", "orange", "mango"];
+    // a. Test that every element in the given array is a string
+    const allStrings = fruits.every(fruit => typeof fruit === 'string');
+    console.log(allStrings);
+    // b. Test that some of array elements starts with "a"
+    const startsWithA = fruits.some(fruit => fruit.startsWith('a'));
+    console.log(startsWithA); 
+
+    // c. Generate new array filtered from the given array with only elements that starts with "b" or "s"
+    const filteredArray = fruits.filter(fruit => fruit.startsWith('b') || fruit.startsWith('s'));
+    console.log(filteredArray); 
+
+    // d. Generate new array each element of the new array contains a string declaring that you like the given fruit element
+    const likeFruitsArray = fruits.map(fruit => `I like ${fruit}`);
+    console.log(likeFruitsArray); 
+
+    // e. Use forEach to display all elements of the new array from previous point
+    likeFruitsArray.forEach(fruit => console.log(fruit));
+   
+</script>

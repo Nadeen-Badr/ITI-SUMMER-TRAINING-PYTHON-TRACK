@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login Page</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-image: url('b.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .form-wrapper {
+      position: relative; /* Added position */
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 10px;
+      text-align: center;
+      box-sizing: border-box; /* Added box-sizing */
+      padding: 20px; /* Adjusted padding */
+    }
+
+    .form-container {
+      padding: 10px; /* Added nested container with padding */
+      border: 2px solid #fff;
+      border-radius: 10px;
+    }
+
+    h2 {
+      color: #fff;
+      margin-bottom: 30px;
+    }
+
+    .form-label {
+      color: #fff;
+      display: block;
+      margin-bottom: 10px;
+      text-align: left;
+    }
+
+    .form-input {
+      width: 100%;
+      height: 30px;
+      padding: 5px;
+      border: none;
+      background-color: rgba(255, 255, 255, 0.2);
+      color: #fff;
+      margin-bottom: 15px;
+      border-radius: 5px;
+    }
+
+    .form-button {
+      width: 150px;
+      height: 40px;
+      border: none;
+      background-color: #ff0000;
+      color: #fff;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-top: 20px;
+    }
+
+    .form-link {
+      color: #fff;
+      text-decoration: none;
+      margin-top: 10px;
+      display: inline-block;
+    }
+
+    .circle-picture {
+      position: absolute; /* Added position */
+      top: -30px; /* Adjust position */
+      left: 50%; /* Adjust position */
+      transform: translateX(-50%); /* Center horizontally */
+      width: 60px;
+      height: 60px;
+      background-color: #fff;
+      border-radius: 50%;
+      background-image: url('b.jpg');
+      background-size: cover;
+      background-position: center;
+      
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="form-wrapper">
+      <div class="form-container"> <!-- Added nested container -->
+        <h2>Login Form</h2>
+        <div class="circle-picture"></div> <!-- Added circle picture element -->
+        <form action="#" method="post">
+          <label class="form-label" for="username">Username</label>
+          <input class="form-input" type="text" id="username" name="username" required>
+
+          <label class="form-label" for="password">Password</label>
+          <input class="form-input" type="password" id="password" name="password" required>
+
+          <input class="form-button" type="submit" value="Login">
+          <br>
+
+          <div class="form-link">
+            <a href="#">Lost your password?</a> |
+            <a href="#">Don't have an account?</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+</html

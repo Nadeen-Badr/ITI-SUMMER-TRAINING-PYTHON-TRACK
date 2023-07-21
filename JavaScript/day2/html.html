@@ -1,0 +1,19 @@
+<script>
+  function calculateCircleArea(radius) {
+    var area = Math.PI * radius * radius;
+    return area;
+  }
+  
+  var radius = prompt("Enter the radius of the circle:");
+  var area = calculateCircleArea(radius);
+  console.log('The area of a circle with radius ' + radius + ' is ' + area);
+
+  var num = prompt("Enter a number:");
+ var sqrt = Math.sqrt(num);
+ alert("The square root of " + num + " is " + sqrt);
+ var degree = prompt("Enter an angle in degrees:");
+var radians = degree * (Math.PI/180);
+var cos = Math.cos(radians);
+alert("The cosine of " + degree + " degrees is " + cos);
+
+</script>

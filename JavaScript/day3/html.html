@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .colored-table {
+      background-color: rgb(34, 153, 207);
+    }
+  </style>
+</head>
+<body>
+    <label>user name</label>
+    <input id="userName" name="userName" type="text">
+    <label>email</label>
+  <input id="email" name="email" type="text">
+  <br>
+  <table id="myTable" border="1">
+    <thead>
+      <tr>
+        <th>name</th>
+        <th>email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>John Doe</td>
+        <td>email1@example.com</td>
+        
+      </tr>
+      <tr>
+        <td>Jane Smith</td>
+        <td>email2@example.com</td>
+        
+      </tr>
+    </tbody>
+  </table>
+  
+  <br>
+  <button onclick="addUser()">add user</button>
+  <br>
+  <button onclick="changeTableStyle()">Change Table Style</button>
+  <br>
+  <button onclick="getBEData ()">get back end</button>
+  <br>
+
+  <img id="myImage" src="b.jpg" height="100 px">
+  <br>
+  <button onclick="changeImage()">Change Image</button>
+
+  <script>
+    function changeTableStyle() {
+      var table = document.getElementById("myTable");
+      table.classList.add("colored-table");
+    }
+    function changeImage() {
+        var image = document.getElementById('myImage');
+        image.src = "c.jpg";
+      }
+
+      function addUserList(arr){
+        for(var i=0;i<arr.length;i++){
+            var newRow = document.createElement("tr")
+            var cell1 = document.createElement("td")
+            var cell2 = document.createElement("td")
+            cell1.innerHTML = arr[i].username
+            cell2.innerHTML = arr[i].email
+            newRow.append(cell1,cell2)
+            myTable.append(newRow)
+        }
+    }
+    function getBEData (){
+        fetch('https://jsonplaceholder.typicode.com/users')
+              .then(response => response.json())
+              .then(data => addUserList(data))
+    }
+    function addUser() {
+        var userNameInput = document.getElementById("userName");
+        var emailInput = document.getElementById("email");
+        var errorMessage = "";
+    
+        if (userNameInput.value.length <= 3) {
+            errorMessage += "User name must be more than 3 letters.\n";
+        }
+        
+        if (!isValidEmail(emailInput.value)) {
+            errorMessage += "Email must be valid.";
+        }
+    
+        if (errorMessage !== "") {
+            alert(errorMessage);
+        } else {
+            var newRow = document.createElement("tr");
+            var cell1 = document.createElement("td");
+            var cell2 = document.createElement("td");
+            cell1.innerHTML = userNameInput.value;
+            cell2.innerHTML = emailInput.value;
+            newRow.append(cell1, cell2);
+            myTable.append(newRow);
+        }
+    }
+    
+    function isValidEmail(email) {
+        // A basic email validation function using a regular expression
+        var emailRegex = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+        return emailRegex.test(email);
+    }
+    
+  </script>
+</body>
+</html>
