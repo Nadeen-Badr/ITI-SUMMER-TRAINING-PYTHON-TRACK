@@ -1,0 +1,85 @@
+{% extends 'pages/parts/base.html' %}
+{% block content %}
+<h1>Student List</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Gender</th>
+                <th>GPA</th>
+                <th>Date and Time</th>
+                <th>Photo</th>
+                <th>Phone</th>
+                <th>Description</th>
+                <th>Success</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for student in students %}
+                <tr>
+                    <td>{{ student.name }}</td>
+                    <td>{{ student.gender }}</td>
+                    <td>{{ student.gpa }}</td>
+                    <td>{{ student.datetime_field }}</td>
+                    <td><img src="{{ student.photo_field.url }}" alt="{{ student.name }}" width="50"></td>
+                    <td>{{ student.phone_field }}</td>
+                    <td>{{ student.description_field }}</td>
+                    <td>{% if student.success %}Yes{% else %}No{% endif %}</td>
+                    <td>
+                        <a href="{% url 'update_student' student.pk %}" class="update-link">Update</a>
+                        <a href="{% url 'delete_student' student.pk %}" class="delete-link">Delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+            <tr>
+                <td colspan="9">
+                    <a href="{% url 'add_student' %}" class="add-link">Add Student</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <style>
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+            background-color: white;
+            box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+        }
+    
+        th, td {
+            text-align: left;
+            padding: 8px;
+        }
+    
+        th {
+            background-color: #343a40;
+            color: white;
+        }
+    
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        a.update-link, a.delete-link, a.add-link {
+            display: inline-block;
+            padding: 5px 10px;
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-right: 5px;
+        }
+        
+        a.update-link:hover, a.delete-link:hover, a.add-link:hover {
+            background-color: #555;
+        }
+        
+        a.update-link:active, a.delete-link:active, a.add-link:active {
+            background-color: #222;
+        }
+    </style>
+
+
+{% endblock %}

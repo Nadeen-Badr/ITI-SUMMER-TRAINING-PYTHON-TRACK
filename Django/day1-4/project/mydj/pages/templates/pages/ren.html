@@ -1,0 +1,11 @@
+{% extends 'pages/parts/base.html' %}
+{% block content %}
+<h1>Names</h1>
+<ul>
+    {% for name in names %}
+      <li><a href="ren/{{name}}">{{ name }}</a></li>
+    {% endfor %}
+  </ul>
+
+{% endblock %}
+      
